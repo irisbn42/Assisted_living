@@ -9,7 +9,7 @@ app.config(function($routeProvider) {
         controller: "loginCtrl"
     }).when("/signup", {
         
-    }).when("/recipes", {
+    }).when ("/events", {      //           ("/recipes", {
         templateUrl: "app/recipes/recipes.html",
         controller: "recipesCtrl"        
     }).when("/new", {

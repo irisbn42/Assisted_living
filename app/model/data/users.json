@@ -4,6 +4,7 @@
         "fname": "Nir",
         "lname": "Channes",
         "email": "nir@nir.com",
+        "zevetordayar":1,
         "pwd": "123"
     },
     {
@@ -11,6 +12,7 @@
         "fname": "John",
         "lname": "Doe",
         "email": "john@john.com",
+        "zevetordayar":2,
         "pwd": "123"
     }
 ]

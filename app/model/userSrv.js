@@ -8,6 +8,7 @@ app.factory("userSrv", function($q, $http) {
         this.fname = plainUser.fname;
         this.lname = plainUser.lname;
         this.email = plainUser.email;
+        this.zevetordayar = plainUser.zevetordayar;
     }
 
 
