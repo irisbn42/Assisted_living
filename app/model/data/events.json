@@ -5,18 +5,19 @@
         "event" : "seret",
         "name"  : "TAKEN1",
         "desc"  : "new with nisan willam  ",
-        "date"  : "22/10/2019",
+        "date"  : "2019-10-22",
         "userId": [1,2,3],
-        "img"   : "https://upload.wikimedia.org/wikipedia/he/thumb/f/f0/Taken_2_Poster.jpg/200px-Taken_2_Poster.jpg",
+        "img"   : "https://upload.wikimedia.org/wikipedia/he/thumb/f/f0/Taken_2_Poster.jpg/200px-Taken_2_Poster.jpg"
         },
     { 
         "id"    : 2,
         "status": 1,
         "name"  : "lecture",
         "desc"  : "Tomato and olives and cheese",
-        "date"  : "22/10/2019",
+        "date"  : "2019-10-22",
         "userId": [1,2,3],
-        "img"   : "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2010/4/23/0/BX0204_greek-salad_s4x3.jpg.rend.hgtvcom.616.462.suffix/1529943050536.jpeg",
+        "userIdIn": "false",
+        "img"   : "https://upload.wikimedia.org/wikipedia/he/thumb/2/27/Taken.jpg/200px-Taken.jpg"
          },
          {
         "id"    : 3,
@@ -24,9 +25,10 @@
         "event" : "seret",
         "name"  : "TAKEN1",
         "desc"  : "new with nisan willam  ",
-        "date"  : "22/10/2019",
+        "date"  : "2019-10-22",
         "userId": [1,2,3],
-        "img"   : "https://upload.wikimedia.org/wikipedia/he/thumb/f/f0/Taken_2_Poster.jpg/200px-Taken_2_Poster.jpg",
+        "userIdIn":  "false",
+        "img"   : "https://upload.wikimedia.org/wikipedia/he/thumb/f/f0/Taken_2_Poster.jpg/200px-Taken_2_Poster.jpg"
         },
         {
         "id"    : 4,
@@ -34,8 +36,9 @@
         "event" : "seret",
         "name"  : "TAKEN1",
         "desc"  : "new with nisan willam  ",
-        "date"  : "22/10/2019",
+        "date"  : "2019-10-22",
         "userId": [1,2,3],
-        "img"   : "https://upload.wikimedia.org/wikipedia/he/thumb/f/f0/Taken_2_Poster.jpg/200px-Taken_2_Poster.jpg",
+        "userIdIn": "false",
+        "img"   : "https://upload.wikimedia.org/wikipedia/he/thumb/f/f0/Taken_2_Poster.jpg/200px-Taken_2_Poster.jpg"
         }
 ]

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="recipeBookApp">
+<html lang="en" ng-app="eventApp">
   <head>
     <title>Title</title>
     <!-- Required meta tags -->
@@ -10,7 +10,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-route.js"></script>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
 
     <link rel="stylesheet" href="style.css">
 
@@ -19,13 +21,13 @@
 
     <!-- adding all my scripts after 3rd party scripts -->
     <script src="app/app.js"></script>
-    <script src="app/navbar/navbarDir.js"></script>
-    <script src="app/navbar/navbarCtrl.js"></script>
+    <script src="app/navbar/navbarEventDir.js"></script>
+    <script src="app/navbar/navbarEventCtrl.js"></script>
     <script src="app/login/loginCtrl.js"></script>
     <script src="app/model/userSrv.js"></script>
-    <script src="app/recipes/recipesCtrl.js"></script>
-    <script src="app/model/recipeSrv.js"></script>
-    <script src="app/recipes/newRecipeCtrl.js"></script>
+    <script src="app/events/eventsCtrl.js"></script>
+    <script src="app/model/eventSrv.js"></script>
+    <script src="app/events/newEventCtrl.js"></script>
   </head>
   <body>
     <ng-view></ng-view>

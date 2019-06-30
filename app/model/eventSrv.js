@@ -24,14 +24,13 @@ app.factory("eventSrv", function($q, $http, userSrv) {
         var activeUserId = userSrv.getActiveUser().id;
         $http.get("app/model/data/events.json").then(function(res) {
               for (var i = 0; i < res.data.length; i++) {
-                events.push(new Recipe(res.data[i]));
+                events.push(new Event(res.data[i]));
                 nextEventsId = res.data.length;
                 var idStam = events[i].userId[1];
               }
         async.resolve(events);
     }, function(err) {
-      console.error(err);
-      async.reject(err);
+        async.reject(err);
     });
   
    return async.promise;
@@ -41,7 +40,7 @@ app.factory("eventSrv", function($q, $http, userSrv) {
 
 
 
-    function addEvent(name, desc, img ) {
+    function addEvent(name, desc, img , date ) {
         var async = $q.defer();
 
         var activeUserId = userSrv.getActiveUser().id;
@@ -58,7 +57,7 @@ app.factory("eventSrv", function($q, $http, userSrv) {
         events[activeUserId].push(newEvent);
 
         // preparing the id for the next addition
-        ++nextRecipeId;
+        ++nextEventId;
 
         async.resolve(newEvent);
 

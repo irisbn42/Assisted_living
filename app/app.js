@@ -1,4 +1,4 @@
-var app = angular.module("recipeBookApp", ["ngRoute", "ngImageInputWithPreview"]);
+var app = angular.module("eventApp", ["ngRoute", "ngImageInputWithPreview"]);
 
 app.config(function($routeProvider) {
     $routeProvider
@@ -10,8 +10,8 @@ app.config(function($routeProvider) {
     }).when("/signup", {
         
     }).when ("/events", {      //           ("/recipes", {
-        templateUrl: "app/recipes/recipes.html",
-        controller: "recipesCtrl"        
+        templateUrl: "app/events/events.html",
+        controller: "eventsCtrl"        
     }).when("/new", {
         
     })
