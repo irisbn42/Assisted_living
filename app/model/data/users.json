@@ -15,4 +15,12 @@
         "zevetordayar":2,
         "pwd": "123"
     }
+    {
+        "id": 3,
+        "fname": "Iris",
+        "lname": "Ben Nun",
+        "email": "irisbn@john.com",
+        "zevetordayar":1,
+        "pwd": "123"
+    }
 ]

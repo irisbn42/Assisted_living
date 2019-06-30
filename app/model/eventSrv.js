@@ -60,14 +60,14 @@ app.factory("eventSrv", function($q, $http, userSrv) {
         // preparing the id for the next addition
         ++nextRecipeId;
 
-        async.resolve(newRecipe);
+        async.resolve(newEvent);
 
         return async.promise;
     }
 
     return {
-        getActiveUserRecipes: getActiveUserRecipes,
-        addRecipe: addRecipe
+        getAllActiveEvent: getAllActiveEvent,
+        addEvent: addEvent
     }
 
 
