@@ -1,13 +1,14 @@
 // using a directive to show a preview of an image
-app.controller("newRecipeCtrl", function($scope, eventSrv, $log) {
+app.controller("newEventCtrl", function($scope, eventSrv, $log) {
 
     $scope.name = "";
     $scope.desc = "";
+    $scope.date = "";
     $scope.img = {};
 
     $scope.addEvent = function() {
-       recipeSrv.addRecipe($scope.name, $scope.desc, $scope.img.src).then(function(newEvent) {
-            $log.info("new recipe added: " + JSON.stringify(newEvent));
+        eventSrv.addEvent($scope.name, $scope.desc, $scope.img.src ,$scope.date).then(function(newEvent) {
+            $log.info("new event added: " + JSON.stringify(newEvent));
             $("#modelId").modal('hide')
        });
     }

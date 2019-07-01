@@ -6,7 +6,8 @@
         "name"  : "TAKEN1",
         "desc"  : "new with nisan willam  ",
         "date"  : "2019-10-22",
-        "userId": [1,2,3],
+        "userId": [1,3,4],
+        "userIdIn":false,
         "img"   : "https://upload.wikimedia.org/wikipedia/he/thumb/f/f0/Taken_2_Poster.jpg/200px-Taken_2_Poster.jpg"
         },
     { 
@@ -15,7 +16,7 @@
         "name"  : "lecture",
         "desc"  : "Tomato and olives and cheese",
         "date"  : "2019-10-22",
-        "userId": [1,2,3],
+        "userId": [2,3,4],
         "userIdIn": "false",
         "img"   : "https://upload.wikimedia.org/wikipedia/he/thumb/2/27/Taken.jpg/200px-Taken.jpg"
          },

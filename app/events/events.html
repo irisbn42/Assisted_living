@@ -15,15 +15,15 @@
                         <p class="card-text">{{event.desc}}</p>
                         <p class="card-text">{{event.date}}</p>
                         <p class="card-text">num participants {{event.userId.length}}</p>   
-                       
+                              hhhhhh  {{event.userIdIn}}  {{event.date}}
                         <!-- <div ng-repeat="user2 in event.userId" ng-if="user2=user.id" >
                              {{user2}}  {{user.id}}
                             
                         </div>     {{myVar}} -->
                         <!-- <input type="checkbox" ng-model="myVar" value="myVar" ng-click="toggleCheckBox()" > -->
-                        <input type="checkbox" ng-model="myVar" value="myVar">
+                        <input type="checkbox" ng-model="event.userIdIn"  ng-click="toggleCheckBox(event)">
 
-                        
+                       
                        
                     </div>
                 </div>

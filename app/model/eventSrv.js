@@ -13,6 +13,7 @@ app.factory("eventSrv", function($q, $http, userSrv) {
             this.name = plainEvent.name;
             this.desc = plainEvent.desc;
             this.date = plainEvent.date;
+            this.userIdIn = plainEvent.userIdIn;
             this.img = plainEvent.img;
             this.userId = plainEvent.userId;
         }
@@ -51,6 +52,7 @@ app.factory("eventSrv", function($q, $http, userSrv) {
             "name": name, 
             "desc": desc,
             "img": img,
+            "date": date,
             "status": 1
          }
         var newEvent = new Event(plainEvent);

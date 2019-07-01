@@ -10,27 +10,30 @@ app.controller("eventsCtrl", function($scope, userSrv, $location, eventSrv) {
     $scope.myVar = true;
     eventSrv.getAllActiveEvent().then(function(events) {
       
- 
-        for (var j=0; j < event.length; j++) {
-            for (var i=0; i < event.userId.length; i++) {
-                  if (events[j].userId[i]== $scope.user ) {
-                     events[j].userIdIn = "true";
+        $scope.events = events;
+        for (var j=0; j < events.length; j++) {
+            for (var i=0; i < events[j].userId.length; i++) {
+                  if ($scope.events[j].userId[i]== $scope.user.id ) {
+                      $scope.events[j].userIdIn = true;
                   }
             }
         }
-        $scope.events = events;
+       
     });
    
 
 
-    // $scope.toggleCheckBox = function(){
-    // if ($scope.myVar==true){
-    //     $scope.myVar=false;
-    // }
-    // else  {
-    //     $scope.myVar=true;
-    // }
-    // }
+      $scope.toggleCheckBox = function(event){
+      if ( event.userIdIn==true){
+        event.userIdIn=false;
+        var n = event.userId.indexOf($scope.user.id);
+        event.userId.splice(n, 1);
+      }
+      else  {
+        event.userIdIn=true;
+        event.userId.push($scope.user.id);
+      }
+      }
 
 
 })
