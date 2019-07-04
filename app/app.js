@@ -14,5 +14,12 @@ app.config(function($routeProvider) {
         controller: "eventsCtrl"        
     }).when("/new", {
         
-    })
-})
+  
+
+    }).when("/events/:id", {
+       templateUrl: "app/events/eventDetails.html",
+       controller: "eventDetailsCtrl"
+    });
+
+});
+   

@@ -19,6 +19,12 @@ app.factory("eventSrv", function($q, $http, userSrv) {
         }
     }
 
+///
+
+////
+
+
+
     function getAllActiveEvent() {
         var async = $q.defer();
 
@@ -37,40 +43,60 @@ app.factory("eventSrv", function($q, $http, userSrv) {
    return async.promise;
     }
 
-   
 
 
+     // Returning (with a promise) a single car by its index in the array
+  function getEventByIndex(index) {
+    var async = $q.defer();
 
-    function addEvent(name, desc, img , date ) {
-        var async = $q.defer();
+    // Getting all the cars and returning a single car by its index in the array
+    getAllActiveEvent().then(function(events) {
+      if (index >= events.length) {
+        async.reject("Index out of bounds")
+      }
+      
+      async.resolve(events[index]);
+    }, function(err) {
+      async.reject(err);
+    })
 
-        var activeUserId = userSrv.getActiveUser().id;
+    return async.promise;
+  }
 
-        // Creating an object elelment to pass to the contructor
-        var plainEvent = {
-            "id": nextEventsId,
-            "name": name, 
-            "desc": desc,
-            "img": img,
-            "date": date,
-            "status": 1
-         }
-        var newEvent = new Event(plainEvent);
-        events[activeUserId].push(newEvent);
+  function addEvent(name, desc, img , date ) {
+    var async = $q.defer();
 
-        // preparing the id for the next addition
-        ++nextEventId;
+    var activeUserId = userSrv.getActiveUser().id;
 
-        async.resolve(newEvent);
+    // Creating an object elelment to pass to the contructor
+    var plainEvent = {
+        "id": nextEventsId,
+        "name": name, 
+        "desc": desc,
+        "img": img,
+        "date": date,
+        "status": 1,
+        "userIdIn":false,
+        "userId":[]
+     }
+    var newEvent = new Event(plainEvent);
+    events.push(newEvent);
 
-        return async.promise;
-    }
+    // preparing the id for the next addition
+    ++nextEventsId;
+       
+    async.resolve(newEvent);
 
-    return {
-        getAllActiveEvent: getAllActiveEvent,
-        addEvent: addEvent
-    }
+    return async.promise;
+}
+
+return {
+    getAllActiveEvent: getAllActiveEvent,
+    addEvent: addEvent,
+    getEventByIndex: getEventByIndex
+}
 
 
+  
 
 });

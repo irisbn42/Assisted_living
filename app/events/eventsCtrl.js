@@ -36,4 +36,12 @@ app.controller("eventsCtrl", function($scope, userSrv, $location, eventSrv) {
       }
 
 
+      $scope.openEventDetails = function(event) {
+    
+        var index = $scope.events.indexOf(event);
+        $location.path("/events/" + index);
+        
+      }
+      
+
 })
