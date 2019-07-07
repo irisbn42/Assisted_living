@@ -1,0 +1,61 @@
+<!-- Modal -->
+<!-- using a directive to show a preview of an image -->
+<div ng-controller="idkunEventCtrl" class="modal fade" id="modelIdIdkun" tabindex="-1" 
+    role="dialog" aria-labelledby="modelTitleId"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Idkun Event</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form>
+                    <div class="form-group row">
+                        <label for="nameIdkun" class="col-sm-2 col-form-label">Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="nameIdkun" 
+                            placeholder="{{eventname}}" value="{{eventname}}" ng-model="nameIdkun">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="descIdkun" class="col-sm-2 col-form-label">Description</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="descIdkun" 
+                            placeholder="{{eventdesc}}" value="{{eventdesc}}"  ng-model="descIdkun">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="dateIdkun" class="col-sm-2 col-form-label">Date</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="dateIdkun" 
+                            placeholder="{{eventdate}}" value="{{eventdate}}"  ng-model="dateIdkun">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                            <label for="statusIdkun" class="col-sm-2 col-form-label">Status</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="statusIdkun" 
+                                placeholder="{{eventstatus}}" value="{{eventstatus}}"  ng-model="statusIdkun">
+                            </div>
+                    </div>
+                    <div class="form-group row">   
+                        <input type="file" image-with-preview ng-model="img" accept="image/jpeg,image/png">
+                        <!-- <label for="img" class="col-sm-2 col-form-label">Image</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="img" placeholder="Enter image URL" ng-model="img">
+                        </div> -->
+                    </div>
+                </form>
+                <img class="img-fluid" ng-show="img.src" ng-src="{{img.src}}" alt="{{name}}">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" ng-click="cancelNewEvent()">Close</button>
+                <button type="button" class="btn btn-primary" ng-click="addEvent()">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

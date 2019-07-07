@@ -2,7 +2,7 @@
 app.factory("userSrv", function($q, $http) {
 
     var activeUser = null; // new User({id: 1, fname: "Nir" ...})
-    var strName = null; 
+    var strName = ""; 
     function User(plainUser) {
         this.id = plainUser.id;
         this.fname = plainUser.fname;
@@ -51,13 +51,14 @@ app.factory("userSrv", function($q, $http) {
 
     function nameOfId(useIdIn) {
         var async = $q.defer();
- 
+        console.log("fdfhhhh");
         $http.get("app/model/data/users.json").then(function(res) {
             var users2 = res.data;
             for (var j = 0; j < useIdIn.length ; j++) {
                for (var i = 0; i < users2.length;  i++) {
                    if (users2[i].id === useIdIn[j]) { 
-                       strName = + users2[i].fname ;
+                       strName += users2[i].fname + "  ";
+                       
                    } 
                 }  
             }
@@ -82,7 +83,8 @@ app.factory("userSrv", function($q, $http) {
         isLoggedIn: isLoggedIn,
         login: login,
         logout: logout,
-        getActiveUser: getActiveUser
+        getActiveUser: getActiveUser,
+        nameOfId:nameOfId
     }
 
 });

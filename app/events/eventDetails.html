@@ -1,6 +1,6 @@
 <div class="container">
     
-       <h1>Event Details</h1>
+       <h2>Event Details</h2>
     
        <p>Name: {{event.name}}</p>
     
@@ -9,14 +9,24 @@
        <p>Date: {{event.date}}</p>
     
        <img  ng-src="{{event.img}}">
-       
+       <br>
+       <br>
        <p>Status: {{event.status}}</p>
-    
-       <p>UserId: {{event.userId}}</p>
+       
+       <p>Participants in the event: {{userIdName}}</p>
+      
+      <!-- <p><span ng-repeat="item in event.userId">   {{item}} </span></p> -->
+
+       <!-- <p>UserId: {{event.userId}}</p> -->
     <!-- <div>
       <iframe width="600" height="450" frameborder="0" style="border:0" 
       ng-src="{{mapURL}}" allowfullscreen>
       </iframe>
     </div> -->
+
+      <button class="btn btn-primary gl-auto"  data-toggle="modal" data-target="#modelIdIdkun">idkun event</button>
+      
+    </div>
+    
   </div>
-   
+  <div ng-include="'app/events/idkunEvent.html'"></div>

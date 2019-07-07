@@ -1,4 +1,4 @@
-app.factory("eventSrv", function($q, $http, userSrv) {
+app.factory("eventSrv", function($q, $http, userSrv , $routeParams) {
 
     // All of these variables are a hack becasue we don't have a server side
     // mianitng all the recipes in the memory
@@ -27,7 +27,7 @@ app.factory("eventSrv", function($q, $http, userSrv) {
 
     function getAllActiveEvent() {
         var async = $q.defer();
-
+      
         var activeUserId = userSrv.getActiveUser().id;
         $http.get("app/model/data/events.json").then(function(res) {
               for (var i = 0; i < res.data.length; i++) {
@@ -63,6 +63,34 @@ app.factory("eventSrv", function($q, $http, userSrv) {
     return async.promise;
   }
 
+  
+  function idkunEvent(id,name, desc, img , date ,status ,userIdIn,userId) {
+    var async = $q.defer();
+
+    var activeUserId = userSrv.getActiveUser().id;
+
+    // Creating an object elelment to pass to the contructor
+    var plainEvent = {
+          "id": id,
+        "name": name, 
+        "desc": desc,
+        "img": img,
+        "date": date,
+        "status": ststus,
+        "userIdIn":userIdIn,
+        "userId":userId
+     }
+    var idkunEvent = new Event(plainEvent);
+    events[$routeParams.id]= idkunEvent ;
+
+    // preparing the id for the next addition
+  
+       
+    async.resolve(idkunEvent);
+
+    return async.promise;
+}
+
   function addEvent(name, desc, img , date ) {
     var async = $q.defer();
 
@@ -93,7 +121,8 @@ app.factory("eventSrv", function($q, $http, userSrv) {
 return {
     getAllActiveEvent: getAllActiveEvent,
     addEvent: addEvent,
-    getEventByIndex: getEventByIndex
+    getEventByIndex: getEventByIndex,
+    idkunEvent:idkunEvent
 }
 
 
